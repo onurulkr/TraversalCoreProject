@@ -18,31 +18,7 @@ namespace DataAccessLayer.Migrations
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("EntityLayer.Concrete.About2", b =>
-                {
-                    b.Property<int>("About2Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Image")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("About2Id");
-
-                    b.ToTable("Abouts2");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.Aboutt", b =>
+            modelBuilder.Entity("EntityLayer.Concrete.About", b =>
                 {
                     b.Property<int>("AboutId")
                         .ValueGeneratedOnAdd()
@@ -70,6 +46,30 @@ namespace DataAccessLayer.Migrations
                     b.HasKey("AboutId");
 
                     b.ToTable("Abouts");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.About2", b =>
+                {
+                    b.Property<int>("About2Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("About2Id");
+
+                    b.ToTable("Abouts2");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Contact", b =>
@@ -118,8 +118,8 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("DayNight")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Description")
-                        .HasColumnType("bit");
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
@@ -145,14 +145,14 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Post1Image")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Post1Name")
+                    b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("FeatureId");
 

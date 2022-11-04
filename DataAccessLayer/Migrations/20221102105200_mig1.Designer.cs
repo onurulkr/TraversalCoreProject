@@ -120,7 +120,7 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("DayNight")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Description")
+                    b.Property<string>("Description")
                         .HasColumnType("bit");
 
                     b.Property<string>("Image")
@@ -147,10 +147,10 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Post1Image")
+                    b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Post1Name")
+                    b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Status")
