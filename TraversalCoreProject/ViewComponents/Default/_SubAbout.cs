@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace TraversalCoreProject.ViewComponents.Default
 {
-    public class _Feature : ViewComponent
+    public class _SubAbout : ViewComponent
     {
-        FeatureManager featureManager = new FeatureManager(new EfFeatureDal());
+        SubAboutManager subAboutManager = new SubAboutManager(new EfSubAboutDal());
         public IViewComponentResult Invoke()
         {
-            return View();
+            var values = subAboutManager.TGetList();
+            return View(values);
         }
     }
 }
