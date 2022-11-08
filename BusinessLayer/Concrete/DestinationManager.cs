@@ -28,9 +28,9 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public Destination TGetById(int d)
+        public Destination TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _destinationDal.GetById(id);
         }
 
         public List<Destination> TGetList()
