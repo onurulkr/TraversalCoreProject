@@ -70,6 +70,14 @@ namespace TraversalCoreProject
                     name: "default",
                     pattern: "{controller=Login}/{action=SignUp}/{id?}");
             });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+            });
         }
     }
 }

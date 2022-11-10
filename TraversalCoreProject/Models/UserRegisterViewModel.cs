@@ -8,7 +8,7 @@ namespace TraversalCoreProject.Models
 {
     public class UserRegisterViewModel
     {
-        [Required(ErrorMessage ="Lütfen adınızı giriniz")]
+        [Required(ErrorMessage = "Lütfen adınızı giriniz")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Lütfen soyadınızı giriniz")]
