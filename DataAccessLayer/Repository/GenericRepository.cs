@@ -19,6 +19,11 @@ namespace DataAccessLayer.Repository
             c.SaveChanges();
         }
 
+        public List<T> GetByFilter(Expression<Func<T, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
         public T GetById(int id)
         {
             using var c = new Context();

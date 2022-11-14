@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,10 +41,15 @@ namespace BusinessLayer.Concrete
 
         public List<Comment> TGetDestinationById(int id)
         {
-            return _commentDal.GetListByFilter(x=>x.DestinationId==id);
+            return _commentDal.GetListByFilter(x => x.DestinationId == id);
         }
 
         public void TUpdate(Comment t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Comment> GetByFilter(Expression<Func<Comment, bool>> filter)
         {
             throw new NotImplementedException();
         }
