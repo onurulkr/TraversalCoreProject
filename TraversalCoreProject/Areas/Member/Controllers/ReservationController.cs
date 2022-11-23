@@ -14,7 +14,7 @@ namespace TraversalCoreProject.Areas.Member.Controllers
     [Area("Member")]
     public class ReservationController : Controller
     {
-        DestinationManager destinationManager = new DestinationManager(new EfDestinationalDal());
+        DestinationManager destinationManager = new DestinationManager(new EfDestinationDal());
         ReservationManager reservationManager = new ReservationManager(new EfReservationDal());
         private readonly UserManager<AppUser> _userManager;
 
