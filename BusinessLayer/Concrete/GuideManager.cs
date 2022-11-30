@@ -45,7 +45,7 @@ namespace BusinessLayer.Concrete
 
         public Guide TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _guideDal.GetById(id);
         }
 
         public List<Guide> TGetList()
