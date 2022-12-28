@@ -14,7 +14,7 @@ using System.IO;
 using TraversalCoreProject.CQRS.Handlers.DestinationHandlers;
 using TraversalCoreProject.Models;
 
-namespace TraversalCoreProject
+namespace TraversalCoreProje
 {
     public class Startup
     {
@@ -29,6 +29,10 @@ namespace TraversalCoreProject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<GetAllDestinationQueryHandler>();
+            services.AddScoped<GetDestinationByIdQueryHandler>();
+            services.AddScoped<CreateDestinationCommandHandler>();
+            services.AddScoped<RemoveDestinationCommandHandler>();
+            services.AddScoped<UpdateDestinationCommandHandler>();
 
             services.AddLogging(x =>
             {
@@ -83,7 +87,6 @@ namespace TraversalCoreProject
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseAuthentication();
-
             app.UseRouting();
 
             app.UseAuthorization();
@@ -92,7 +95,7 @@ namespace TraversalCoreProject
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Login}/{action=SignUp}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
             app.UseEndpoints(endpoints =>

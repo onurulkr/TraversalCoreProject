@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using TraversalCoreProje.Areas.Admin.Models;
 using TraversalCoreProject.Areas.Admin.Models;
 
 namespace TraversalCoreProje.Areas.Admin.Controllers
@@ -25,7 +26,7 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:7210/api/Visitor");
+            var responseMessage = await client.GetAsync("http://localhost:21081/api/Visitor");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -47,7 +48,7 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(p);
             StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("http://localhost:7210/api/Visitor", content);
+            var responseMessage = await client.PostAsync("http://localhost:21081/api/Visitor", content);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -58,7 +59,7 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
         public async Task<IActionResult> DeleteVisitor(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.DeleteAsync($"http://localhost:7210/api/Visitor/{id}");
+            var responseMessage = await client.DeleteAsync($"http://localhost:21081/api/Visitor/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -70,7 +71,7 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
         public async Task<IActionResult> UpdateVisitor(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"http://localhost:7210/api/Visitor/{id}");
+            var responseMessage = await client.GetAsync($"http://localhost:21081/api/Visitor/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -86,7 +87,7 @@ namespace TraversalCoreProje.Areas.Admin.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(p);
             StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PutAsync("http://localhost:7210/api/Visitor", content);
+            var responseMessage = await client.PutAsync("http://localhost:21081/api/Visitor", content);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
