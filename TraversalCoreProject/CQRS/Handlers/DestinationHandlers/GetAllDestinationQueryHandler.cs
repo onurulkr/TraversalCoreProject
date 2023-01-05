@@ -24,6 +24,7 @@ namespace TraversalCoreProject.CQRS.Handlers.DestinationHandlers
                 daynight = x.DayNight,
                 price = x.Price
             }).AsNoTracking().ToList();
+
             return values;
         }
     }
