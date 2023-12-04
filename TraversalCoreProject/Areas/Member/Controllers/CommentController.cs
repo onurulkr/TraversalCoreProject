@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TraversalCoreProject.Areas.Member.Controllers
 {
-    [Area("Member")]
+    [Area("Member")] 
     [AllowAnonymous]
     public class CommentController : Controller  
     {
